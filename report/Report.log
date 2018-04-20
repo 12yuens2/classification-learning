@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2018.4.5)  19 APR 2018 22:11
+This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2018.4.5)  20 APR 2018 12:33
  restricted system commands enabled.
 **Report.tex
 (./Report.tex
@@ -657,7 +657,31 @@ Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 \PaperWidth=\dimen190
 \PaperHeight=\dimen191
-) (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplotstable.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen192
+\captionmargin@=\dimen193
+\captionwidth=\dimen194
+\caption@tempdima=\dimen195
+\caption@indent=\dimen196
+\caption@parindent=\dimen197
+\caption@hangindent=\dimen198
+)
+\c@ContinuedFloat=\count146
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count147
+\c@subtable=\count148
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplotstable.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplotstable 2016/01/06 v1.13 Table typesetting and Pretty-printing (1
 .13)
@@ -674,7 +698,7 @@ ment
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks43
-\c@algorithm=\count146
+\c@algorithm=\count149
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -683,15 +707,15 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count147
-\c@ALG@rem=\count148
-\c@ALG@nested=\count149
+\c@ALG@line=\count150
+\c@ALG@rem=\count151
+\c@ALG@nested=\count152
 \ALG@tlm=\skip64
 \ALG@thistlm=\skip65
-\c@ALG@Lnr=\count150
-\c@ALG@blocknr=\count151
-\c@ALG@storecount=\count152
-\c@ALG@tmpcounter=\count153
+\c@ALG@Lnr=\count153
+\c@ALG@blocknr=\count154
+\c@ALG@storecount=\count155
+\c@ALG@tmpcounter=\count156
 \ALG@tmplength=\skip66
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -719,16 +743,16 @@ LaTeX Font Info:    ... okay on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count154
-\scratchdimen=\dimen192
+\scratchcounter=\count157
+\scratchdimen=\dimen199
 \scratchbox=\box45
-\nofMPsegments=\count155
-\nofMParguments=\count156
+\nofMPsegments=\count158
+\nofMParguments=\count159
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count157
-\MPscratchDim=\dimen193
-\MPnumerator=\count158
-\makeMPintoPDFobject=\count159
+\MPscratchCnt=\count160
+\MPscratchDim=\dimen256
+\MPnumerator=\count161
+\makeMPintoPDFobject=\count162
 \everyMPtoPDFconversion=\toks45
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -781,7 +805,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count160
+\c@lstlisting=\count163
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
@@ -789,6 +813,8 @@ ck labels; missing features). Consider writing \pgfplotsset{compat=1.13} into yo
 ur preamble.
  on input line 14.
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 <imgs/logo.png, id=4, 702.625pt x 878.28125pt>
 File: imgs/logo.png Graphic file (type png)
  <use imgs/logo.png>
@@ -811,65 +837,100 @@ g>]
 File: imgs/binary-visual.png Graphic file (type png)
 
 <use imgs/binary-visual.png>
-Package luatex.def Info: imgs/binary-visual.png used on input line 36.
+Package luatex.def Info: imgs/binary-visual.png used on input line 38.
 (luatex.def)             Requested size: 427.43153pt x 149.23349pt.
 
 <imgs/binary-correlation.png, id=17, 907.39pt x 322.20375pt>
 File: imgs/binary-correlation.png Graphic file (type png)
 
 <use imgs/binary-correlation.png>
-Package luatex.def Info: imgs/binary-correlation.png used on input line 47.
+Package luatex.def Info: imgs/binary-correlation.png used on input line 49.
 (luatex.def)             Requested size: 427.43153pt x 151.77501pt.
  [1<./imgs/binary-visual.png>]
-<imgs/binary-numfeatures.png, id=26, 643.40375pt x 325.215pt>
+<imgs/binary-onefeaturebad.png, id=26, 401.5pt x 278.03876pt>
+File: imgs/binary-onefeaturebad.png Graphic file (type png)
+
+<use imgs/binary-onefeaturebad.png>
+Package luatex.def Info: imgs/binary-onefeaturebad.png used on input line 62.
+(luatex.def)             Requested size: 192.34288pt x 133.19829pt.
+
+<imgs/binary-onefeaturegood.png, id=27, 383.4325pt x 279.0425pt>
+File: imgs/binary-onefeaturegood.png Graphic file (type png)
+
+<use imgs/binary-onefeaturegood.png>
+Package luatex.def Info: imgs/binary-onefeaturegood.png used on input line 67.
+(luatex.def)             Requested size: 192.34288pt x 139.98074pt.
+ [2<./imgs/binary-correlation.png><./imgs/binary-onefeaturebad.png><./imgs/binar
+y-onefeaturegood.png>]
+<imgs/binary-onefeature1.png, id=35, 389.455pt x 273.02pt>
+File: imgs/binary-onefeature1.png Graphic file (type png)
+
+<use imgs/binary-onefeature1.png>
+Package luatex.def Info: imgs/binary-onefeature1.png used on input line 78.
+(luatex.def)             Requested size: 132.50273pt x 92.88806pt.
+
+<imgs/binary-onefeature2.png, id=36, 387.4475pt x 278.03876pt>
+File: imgs/binary-onefeature2.png Graphic file (type png)
+
+<use imgs/binary-onefeature2.png>
+Package luatex.def Info: imgs/binary-onefeature2.png used on input line 82.
+(luatex.def)             Requested size: 132.50273pt x 95.08769pt.
+
+<imgs/binary-onefeature3.png, id=37, 394.47375pt x 279.0425pt>
+File: imgs/binary-onefeature3.png Graphic file (type png)
+
+<use imgs/binary-onefeature3.png>
+Package luatex.def Info: imgs/binary-onefeature3.png used on input line 86.
+(luatex.def)             Requested size: 132.50273pt x 93.72783pt.
+ [3<./imgs/binary-onefeature1.png><./imgs/binary-onefeature2.png><./imgs/binary-
+onefeature3.png>]
+<imgs/binary-numfeatures.png, id=44, 632.3625pt x 323.2075pt>
 File: imgs/binary-numfeatures.png Graphic file (type png)
 
 <use imgs/binary-numfeatures.png>
-Package luatex.def Info: imgs/binary-numfeatures.png used on input line 58.
-(luatex.def)             Requested size: 427.43153pt x 216.05684pt.
+Package luatex.def Info: imgs/binary-numfeatures.png used on input line 161.
+(luatex.def)             Requested size: 427.43153pt x 218.46634pt.
 
-<imgs/multiclass-visual.png, id=27, 913.4125pt x 320.19624pt>
+<imgs/multiclass-visual.png, id=45, 913.4125pt x 320.19624pt>
 File: imgs/multiclass-visual.png Graphic file (type png)
 
 <use imgs/multiclass-visual.png>
-Package luatex.def Info: imgs/multiclass-visual.png used on input line 70.
+Package luatex.def Info: imgs/multiclass-visual.png used on input line 175.
 (luatex.def)             Requested size: 427.43153pt x 149.83266pt.
- [2<./imgs/binary-correlation.png><./imgs/binary-numfeatures.png>]
-<imgs/multiclass-correlation.png, id=33, 908.39375pt x 322.20375pt>
+ [4<./imgs/binary-numfeatures.png>]
+<imgs/multiclass-correlation.png, id=50, 908.39375pt x 322.20375pt>
 File: imgs/multiclass-correlation.png Graphic file (type png)
 
 <use imgs/multiclass-correlation.png>
-Package luatex.def Info: imgs/multiclass-correlation.png used on input line 78.
+Package luatex.def Info: imgs/multiclass-correlation.png used on input line 183.
+
 (luatex.def)             Requested size: 427.43153pt x 151.60785pt.
- [3<./imgs/multiclass-visual.png><./imgs/multiclass-correlation.png>] (./Report
-.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-)
+ [5<./imgs/multiclass-visual.png><./imgs/multiclass-correlation.png>] (./Report
+.aux))
 
 Here is how much of LuaTeX's memory you used:
- 26493 strings out of 495119
+ 27661 strings out of 495119
  125171,953878 words of node,token memory allocated
- 429 words of node memory still in use:
-   5 hlist, 2 vlist, 2 rule, 9 glue, 1 kern, 43 glue_spec, 1 write nodes
-   avail lists: 1:2,2:27,3:45,4:14,5:111,6:1738,7:400,8:6,9:56,10:7,11:164
- 29021 multiletter control sequences out of 65536+600000
- 43 fonts using 1789363 bytes
- 57i,7n,77p,836b,251s stack positions out of 5000i,500n,10000p,200000b,100000s
-<</usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmbx10.pk>><</c
-s/home/sy35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.600pk>><</
-usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr10.pk>><</cs/ho
-me/sy35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.720pk>><</usr/
-share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk>><</cs/home/s
-y35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmti12.600pk>><</cs/home/
-sy35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmcsc10.720pk>><</cs/hom
-e/sy35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.1037pk>><</cs/h
-ome/sy35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmcsc10.1037pk>>
-Output written on Report.pdf (4 pages, 326920 bytes).
+ 520 words of node memory still in use:
+   5 hlist, 2 vlist, 2 rule, 22 glue, 1 kern, 43 glue_spec, 1 write nodes
+   avail lists: 1:4,2:27,3:72,4:28,5:175,6:2690,7:848,8:139,9:187,10:15,11:241
+ 30137 multiletter control sequences out of 65536+600000
+ 44 fonts using 1830635 bytes
+ 57i,9n,77p,949b,491s stack positions out of 5000i,500n,10000p,200000b,100000s
+<</cs/home/sy35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmr9.600pk>><
+</usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmbx10.pk>><</cs
+/home/sy35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.600pk>><</u
+sr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr10.pk>><</cs/hom
+e/sy35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.720pk>><</usr/s
+hare/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk>><</cs/home/sy
+35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmti12.600pk>><</cs/home/s
+y35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmcsc10.720pk>><</cs/home
+/sy35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.1037pk>><</cs/ho
+me/sy35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmcsc10.1037pk>>
+Output written on Report.pdf (6 pages, 384744 bytes).
 
-PDF statistics: 251 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+PDF statistics: 328 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
