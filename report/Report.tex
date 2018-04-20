@@ -153,29 +153,34 @@ Wavelength 709.966 & 1.0 & 1.0\\
 \end{tabular}
 \caption{Accuracy of training logistic regression on 10\% of the training data and testing on the remaining 90\%.}
 \end{table}
-\noindent
-
-
-\subsection{Evaluation}
-
-Finally, the use of a single feature obtaining such a high classification rate was confirmed with the use of recursive feature elimination with cross validation. This shows how the accuracy score improves as the number of features used increases.
+Two more approaches were used as a final way of checking that one input feature is enough for a good classification of this problem. First the accuracies of each single input feature is calculated by training a logistic regression model with that feature and plotting the accuracies. Finally, recursive feature elimination was used to get the accuracy score as the number of features used increased to show any more than two input features will always give 100\% accuracy. 
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{imgs/binary-accuracy.png}
+\caption{All input feature wavelengths trained individually and their accuracies graphed.}
+\label{fig:binary-accuracy}
+\end{figure}
+%
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth, keepaspectratio]{imgs/binary-numfeatures.png}
 \caption{Cross validation accuracy score of increasing number of features using recursive feature elimination.}
+\label{fig:binary-accuracyrfecv}
 \end{figure}
 \noindent
+Figure \ref{fig:binary-accuracy} shows the accuracy of each input feature when used alone to train the logistic regression model. It can be seen to be very similar to figure \ref{fig:binary-correlation} which showed the correlation of each input feature. This indicates the well correlated features are also the ones that have good accuracies with little noise disrupting this pattern. The graph of accuracy obtain from recursive feature elimination with cross validation does not confirm it is always the case the one input feature is enough for perfect classification. This is because of the wavelengths at the beginning and end of the data where there is more overlap. However, one input feature already gets a 0.992 classification rate on average and any more than one feature always gets 100\%. 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=1\textwidth]{imgs/binary-accuracy.png}
-\caption{All input feature wavelengths trained with accuracies graphed.}
-\end{figure}
-\noindent
+\subsection{Evaluation}
+From the initial visualisations of the binary classification data, it could be seen that for a range of wavelengths, the two classes of red and green colours were easily distinguishable by eye. This was further confirmed by graphing the correlation of each wavelength to the output classification and shown clearly by plotting the histogram of a single wavelength, which showed a clear separation between the classes. Because of these observations, it was not a huge surprise that a simple logistic regression model was able to perform perfect classification on the training data, using specific single input features. The results were confirmed to not be due to overfitting, as k-fold validation was performed with a large value of k. Moreover, it was shown that with a training set size of just 10\% (12 data points), the high classification rate was still retained when predicting the other 90\% (114 data points).
+\n
+The results make sense when coming back to what the actual classification problem is. The data represents spectroscopy data with red and green colours placed under the device. As red and green are very distinct colours with different wavelengths, it was natural that there would be a clear separation between the colours.
+\n
+Finally, the use of a single feature obtaining such a high classification rate was confirmed with the use of recursive feature elimination with cross validation. This shows how the accuracy score improves as the number of features used increases.
 
 At one 
 The fact that this classification problem could be easily solved with the simplest logistic regression model using only one input feature and a minuscule number of training samples shows TODO. 
 \section{Multiclass Classification}
+For the multiclass classification, many of the same steps as the binary task were taken. Because of the added complexity of more classes, the results were not the same and hence the steps deviate from the binary task at a certain point. 
 
 \subsection{Preprocessing}
 
