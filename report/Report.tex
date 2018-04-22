@@ -26,7 +26,7 @@ In this practical, two classification tasks were performed on an experimental da
 \subsection{Preprocessing}
 Before any preprocessing is done, the data was split into training and test datasets. This is to ensure no bias when looking at the data, even for visualisations. The split is also stratified over the output to ensure the training and test sets have the same proportion of classes that is found in the original data. This again is done to prevent bias and overfitting as much as possible so that the trained model is not overfit to a subset of the data with a different proportion of classes. 
 \n
-Nothing was done about the negative intensities found in the data as this came from issues during data collection where the distance of the spectrometer changed. It is not trivial to account for the errors as the distance moved is not known. Further, scaling to the negative values to keep the intensities going from 0-100\% is likely to skew the data in an unknown way. Removing all data points where negative values exist would also hurt as the dataset is already quite small. TODO. Because of these reasons, the data was not cleaned for negative intensities. 
+Nothing was done about the negative intensities found in the data as this came from issues during data collection where the distance of the spectrometer changed. It is not trivial to account for the errors as the distance moved is not known. Further, scaling to the negative values to keep the intensities going from 0-100\% is likely to skew the data in an unknown way. Removing all data points where negative values exist would also hurt as the dataset is already quite small. TODO. Because of these reasons, the data was not cleaned for negative intensities. Furthermore the data was not normalised. This is because all the input features represented the same units of measurement and so there is not any difference between the ranges of each feature. 
 
 
 \subsubsection{Data visualisation}
@@ -163,7 +163,7 @@ Two more approaches were used as a final way of checking that one input feature 
 %
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\textwidth, keepaspectratio]{imgs/binary-numfeatures.png}
+\includegraphics[width=0.7\textwidth, keepaspectratio]{imgs/binary-numfeatures.png}
 \caption{Cross validation accuracy score of increasing number of features using recursive feature elimination.}
 \label{fig:binary-accuracyrfecv}
 \end{figure}
@@ -175,33 +175,119 @@ From the initial visualisations of the binary classification data, it could be s
 \n
 The results make sense when coming back to what the actual classification problem is. The data represents spectroscopy data with red and green colours placed under the device. As red and green are very distinct colours with different wavelengths, it was natural that there would be a clear separation between the colours.
 \n
-Finally, the use of a single feature obtaining such a high classification rate was confirmed with the use of recursive feature elimination with cross validation. This shows how the accuracy score improves as the number of features used increases.
+Because of the high accuracy obtained by the logistic regression model, no further machine learning models were used or tried on the dataset. This was done for a few reasons. First, little improvement in terms of accuracy could be gain from using different models if the accuracy from logistic regression is already at 100\% using one input feature and 12 training data points, so there is little point to try and optimise further. Second, most other machine learning models involved more complexity than a logistic regression model so if little improvement can be made, it seemed more practical to stick with the simple model rather than try something more complex.
 
-At one 
-The fact that this classification problem could be easily solved with the simplest logistic regression model using only one input feature and a minuscule number of training samples shows TODO. 
+%At one 
+%The fact that this classification problem could be easily solved with the simplest logistic regression model using only one input feature and a minuscule number of training samples shows TODO. 
 \section{Multiclass Classification}
 For the multiclass classification, many of the same steps as the binary task were taken. Because of the added complexity of more classes, the results were not the same and hence the steps deviate from the binary task at a certain point. 
 
 \subsection{Preprocessing}
-
+Again the data was split into training and test data at the very beginning before any further visualisation or analysis. Stratification was also used on the output to ensure the same proportion of classes in both the training set and testing set. Additionally, the data was not cleaned or normalised for the same reasoning explained for the binary classification.
 \subsubsection{Data visualisation}
-
+With the additional colour classes in the dataset, it can be seen that there are more areas of overlap and no clear wavelengths where all colours are distinct from each other. The pattern of having noisy input at the early and late wavelengths is still apparent in this data, which shows the measurement was relatively consistent to the data for binary classification. Because of the additional colours, it may be expected that a single input feature would not be enough to classify the colours. Particularly the pink and red wavelength intensities look like they follow a very similar pattern, which makes sense as they are the closest colours out of the five. These two colours may be one of the more difficult to determine between compared to the other classes.
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth, keepaspectratio]{imgs/multiclass-visual.png}
 \caption{Plot of the data to show the intensity of wavelengths of the different colour classes.}
+\label{fig:multiclass-visualisation}
 \end{figure}
 
 \subsubsection{Data correlation}
-
+The correlation of each input feature to the output class is graphed to see if similar patterns as the binary classification can be seen.
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth, keepaspectratio]{imgs/multiclass-correlation.png}
 \caption{Correlation of each wavelength input feature to the colour classification.}
 \end{figure}
+\noindent
+Unlike in binary classification, here there is never a single input feature where there is perfect correlation and this follows from the visualisation of the data in figure \ref{fig:multiclass-visualisation}. Some ranges of wavelengths have a high correlation than others, but not enough to completely classify each of the five classes. To get a good idea of how the data is spread for each wavelength, a few histograms are created like in the binary task.
+\begin{figure}[H]
+\centering
+\subfigureimage{0.31\textwidth}
+{imgs/multiclass-onefeature1.png}
+{Wavelength 420.852}
+\hspace*{\fill}
+\subfigureimage{0.31\textwidth}
+{imgs/multiclass-onefeature2.png}
+{Wavelength 495.496}
+\hspace*{\fill}
+\subfigureimage{0.31\textwidth}
+{imgs/multiclass-onefeature3.png}
+{Wavelength 568.648}
+
+\vspace{0.5cm}
+
+\subfigureimage{0.31\textwidth}
+{imgs/multiclass-onefeature4.png}
+{Wavelength 604.625}
+\hspace*{\fill}
+\subfigureimage{0.31\textwidth}
+{imgs/multiclass-onefeature5.png}
+{Wavelength 640.181}
+\hspace*{\fill}
+\subfigureimage{0.31\textwidth}
+{imgs/multiclass-onefeature6.png}
+{Wavelength 709.966}
+\caption{Histograms of single input features for multiclass classification}
+\end{figure}
+\noindent
+Because of the additional classes, there is a much less clear distinction between all the colours. For example we can see for wavelength of 420nm, 495nm and 709nm there is significant overlap between at least two classes. The intensities at wavelength 568nm and 604nm show a clearer difference, but there is not a large margin of difference between some classes, for example red and pink. This suggests that one input feature is not likely to be enough to get perfect classification like in the binary case. Further, models could be more prone to overfitting, as the lack of large margin difference in a single input feature means any small outliers may cross into another class boundary more easily. With more than a single input feature, the combination of different boundaries for different wavelengths could uniquely identify the class. 
 
 \subsection{Results}
+To get an idea of the optimal number of input features that should be used, recursive feature elimination is used. A logistic regression model is used first following the good results this simple model got during the binary classification task. 
 
+\begin{figure}[H]
+\centering
+\subfigureimage{0.48\textwidth}
+{imgs/multiclass-numfeatures1.png}
+{Showing all features}
+\hspace*{\fill}
+\subfigureimage{0.48\textwidth}
+{imgs/multiclass-numfeatures2.png}
+{Showing only up to 15 features}
+\caption{Cross validation accuracy score of increasing number of features with recursive feature elimination for multiclass classification.}
+\end{figure}
+\noindent
+It can be seen there is an odd dip at the beginning when using fewer features. Upon closer inspection, at three and four input features the accuracy becomes 100\%, but dips back down from including more features before going back to 100\% after thirteen features. This suggests that between five and twelve input features, the addition of more features sometimes causes noise that is not well correlated to other features, causing some overfitting. It should be noted that the dip is a \textit{very} small dip in accuracy, from 100\% to 99.67\%. Past twelve features, the accuracy stays at 100\% up to using all features from the data. This shows that with enough wavelength information, it is possible to always classify the different colours. Adding additional features does not lead to overfitting in this case because there is little noise in the actual data and all the input features represent the same thing in wavelength intensity, so it does not become the case that having all the input features adds irrelevant information, but more the case it simply adds redundant information. 
+\n
+As it is expected using all the input features would get 100\% accuracy, the goal pursued was to see the kind of accuracies that could be gained with as few features as possible. From the visualisations earlier, it may be possible with one feature, but fewer features may also make the model harder to generalise, especially with less training data. 
+\begin{table}[H]
+\centering
+\begin{tabular}{| c | c |}
+\hline
+\textbf{No. of input features} & \textbf{Training acc.} \\
+\hline
+1 & 0.73 \\
+\hline
+2 & 1.0 \\
+\hline
+3 & 1.0 \\
+\hline
+4 & 1.0 \\
+\hline
+\end{tabular}
+\caption{Accuracy of training with different number of input features for multiclass classification.}
+\end{table} 
+From training on all the data from the training set, it was possible to get 100\% accuracy with 2 features. Again, we must do more to ensure this is not a case of overfitting. Both cross validation and training with significantly less sample points were done like in binary classification to confirm any absence of overfitting and to show that the model can generalise to larger volumes of unseen data with few features and few training examples. 
+\begin{table}[H]
+\centering
+\begin{tabular}{| c | c | c | c |}
+\hline
+\textbf{No. of input features} & \textbf{10 fold acc.} & \textbf{50 fold acc.} & \textbf{10\% training size test acc.} \\
+\hline
+1 & 0.727 & 0.721 & 0.581 \\
+\hline
+2 & 1.0 & 0.998 & 0.996 \\
+\hline
+3 & 1.0 & 1.0 & 1.0 \\
+\hline
+4 & 1.0 & 1.0 & 0.993 \\
+\hline
+\end{tabular}
+\end{table}
+\noindent
+It can be seen that similar to the case with binary classification, where 100\% accuracy could be obtained from training on all the training data, using additional methods confirms the fact that the result is not a case of overfitting. There is only a very small drop in accuracy from using a large k-fold validation and from using a small 10\% training size. It is interesting to see that with 4 input features, no loss of accuracy can be seen despite the methods used, showing the logistic regression model with 3 input features is able to generalise very well to unseen data. 
 \section{Conclusion and Evaluation}
 
 %\printbibliography
