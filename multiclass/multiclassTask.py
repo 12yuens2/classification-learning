@@ -3,13 +3,13 @@
 
 # # Load dataset
 
-# In[ ]:
+# In[1]:
 
 
 import pandas as pd
 
 
-# In[ ]:
+# In[2]:
 
 
 raw_df = pd.read_csv("data/X.csv", header=None)
@@ -18,7 +18,7 @@ raw_df = pd.read_csv("data/X.csv", header=None)
 # ### Fix column headers
 # Use wavelengths from `Wavelength.csv` as column headers of data.
 
-# In[ ]:
+# In[3]:
 
 
 wavelengths = pd.read_csv("data/Wavelength.csv", header=None)
@@ -27,7 +27,7 @@ wavelength_df = raw_df.rename(columns=wavelengths.T.loc[0])
 
 # ### Read output values
 
-# In[ ]:
+# In[4]:
 
 
 y = pd.read_csv("data/y.csv", header=None)
@@ -38,7 +38,7 @@ y = y[0]
 
 # # Split training and test set
 
-# In[ ]:
+# In[5]:
 
 
 from sklearn.model_selection import train_test_split
@@ -50,7 +50,7 @@ X_train, X_test, y_train, y_test = train_test_split(wavelength_df, y, stratify=y
 
 # ### Data Visualisation
 
-# In[ ]:
+# In[6]:
 
 
 import matplotlib.pyplot as plt
@@ -59,7 +59,7 @@ import matplotlib.pyplot as plt
 # ### Visualise dataset
 # Just like the binary task, but more colours have to be used
 
-# In[ ]:
+# In[7]:
 
 
 plt.figure(figsize=(15,5))
@@ -84,14 +84,14 @@ plt.show()
 
 # ### Plot correlation of each input feature
 
-# In[ ]:
+# In[8]:
 
 
 # Add output column to check correlation
 correlation_data = X_train.assign(output=y_train)
 
 
-# In[ ]:
+# In[9]:
 
 
 plt.figure(figsize=(15,5))
@@ -105,7 +105,7 @@ plt.show()
 # ### Plot histogram of single input feature
 # This would be expected to be not as effective as in the binary task as there are five classes rather than just two.
 
-# In[ ]:
+# In[10]:
 
 
 def inputfeature_hist(feature, X, y):
@@ -123,7 +123,7 @@ def inputfeature_hist(feature, X, y):
     plt.show()
 
 
-# In[ ]:
+# In[11]:
 
 
 import warnings
@@ -138,7 +138,7 @@ for i in [0,200,400,500,600,800]:
 # ### Less input features
 # Should be able to use less input features as binary demonstrated and histograms show some input features have good distinction between colours
 
-# In[ ]:
+# In[12]:
 
 
 from sklearn.linear_model import LogisticRegression
@@ -151,7 +151,7 @@ rfecv = RFECV(lr_rfecv, step=1, scoring="accuracy", cv=5)
 rfecv.fit(X_train, y_train)
 
 
-# In[ ]:
+# In[13]:
 
 
 # Plot all features
@@ -162,7 +162,7 @@ plt.plot(range(1, len(rfecv.grid_scores_)+1), rfecv.grid_scores_)
 plt.show()
 
 
-# In[ ]:
+# In[14]:
 
 
 # Closer look at dip in accuracy
@@ -172,7 +172,7 @@ plt.plot(range(1, 15), rfecv.grid_scores_[:14])
 plt.show()
 
 
-# In[ ]:
+# In[15]:
 
 
 from sklearn.feature_selection import RFE
@@ -187,14 +187,14 @@ for i in [1,2,3,4]:
     indices[i] = [j for j,x in enumerate(list(rfe.ranking_)) if x == 1]
 
 
-# In[ ]:
+# In[16]:
 
 
 for n,features in indices.items():
     print("Best " + str(n) + " features: " + str(features))
 
 
-# In[ ]:
+# In[17]:
 
 
 def train_and_test(indices, X, y):
@@ -209,7 +209,7 @@ def train_and_test(indices, X, y):
     return lr
 
 
-# In[ ]:
+# In[18]:
 
 
 for n,features in indices.items():
@@ -221,7 +221,7 @@ for n,features in indices.items():
 # ### Cross validation
 # Try using k-fold cross validation to reduce overfitting
 
-# In[ ]:
+# In[19]:
 
 
 import numpy as np
@@ -235,7 +235,7 @@ for n,features in indices.items():
     print(str(np.mean(scores)) + "\n")
 
 
-# In[ ]:
+# In[20]:
 
 
 #Try higher k-fold (k=50)
@@ -249,7 +249,7 @@ for n,features in indices.items():
 
 # ### Less training samples
 
-# In[ ]:
+# In[21]:
 
 
 # Further split training set to 90% testing 10% training
@@ -259,7 +259,7 @@ print("Small training set size: " + str(len(X_train_small)))
 print("Small testing set size: " + str(len(X_test_small)))
 
 
-# In[ ]:
+# In[22]:
 
 
 # All features
@@ -272,29 +272,25 @@ for n,features in indices.items():
 
 # ### Decision Tree
 
-# In[ ]:
+# In[23]:
 
 
 from sklearn import tree
 from sklearn.metrics import accuracy_score
 
 
-# In[ ]:
+# In[25]:
 
 
 # Use decision tree
 clf = tree.DecisionTreeClassifier()
 clf.fit(X_train, y_train)
 
-
-# In[ ]:
-
-
 predictions = clf.predict(X_train)
 accuracy_score(y_train, predictions)
 
 
-# In[ ]:
+# In[26]:
 
 
 import graphviz
@@ -304,60 +300,63 @@ graph.save("decisiontree.dot")
 graph
 
 
-# In[ ]:
+# In[28]:
 
 
 # Get number of features with non-zero feature importance
-len(filter(lambda x: x != 0, clf.feature_importances_))
+len(list(filter(lambda x: x != 0, clf.feature_importances_)))
 
 
 # # Running models on test data
 # As three features has worked well during training, even with a very small traning sample, it will be used as the final model for testing
 
-# In[ ]:
+# In[29]:
 
 
 indices
 
 
-# In[ ]:
+# In[35]:
 
 
 # Train model
-lr_model = train_and_test(indices, X_train, y_train)
-
-
-# In[ ]:
-
-
-predictions = lr_model.predict(X_test[X_test.columns[indices].tolist()])
-accuracy_score(predictions, y_test)
+for n,features in indices.items():
+    print("Model with " + str(n) + " features")
+    lr_model = train_and_test(features, X_train, y_train)
+    
+    predictions = lr_model.predict(X_test[X_test.columns[features].tolist()])
+    print("Testing accuracy: " + str(accuracy_score(predictions, y_test)) + "\n")
 
 
 # # Run model on XToClassify
 
-# In[ ]:
+# In[41]:
 
 
 XToClassify = pd.read_csv("data/XtoClassify.csv", header=None)
 XToClassify = XToClassify.rename(columns=wavelengths.T.loc[0])
 
 
-# In[ ]:
-
-
-predictions = lr_model.predict(XToClassify[XToClassify.columns[indices].tolist()])
-
-
-# In[ ]:
+# In[42]:
 
 
 import csv
 
-output_file = open("PredictedClasses.csv", "w")
-writer = csv.writer(output_file, delimiter=",")
-for p in predictions:
-    writer.writerow([p])
-output_file.flush()
-output_file.close()
+def write_csv(filename, predictions):
+    output_file = open(filename, "w")
+    writer = csv.writer(output_file, delimiter=",")
+    for p in predictions:
+        writer.writerow([p])
+    output_file.flush()
+    output_file.close()
+
+
+# In[43]:
+
+
+for n,features in indices.items():
+    lr_model = train_and_test(features, X_train, y_train)
+    predictions = lr_model.predict(XToClassify[XToClassify.columns[features].tolist()])
+    
+    write_csv("data/PredictedClasses-" + str(n) +"features.csv", predictions)
 
