@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2018.4.5)  23 APR 2018 12:19
+This is LuaTeX, Version 0.95.0 (TeX Live 2016)  (format=lualatex 2018.4.5)  23 APR 2018 12:46
  restricted system commands enabled.
 **Report.tex
 (./Report.tex
@@ -860,58 +860,59 @@ File: imgs/binary-onefeaturegood.png Graphic file (type png)
 <use imgs/binary-onefeaturegood.png>
 Package luatex.def Info: imgs/binary-onefeaturegood.png used on input line 66.
 (luatex.def)             Requested size: 192.34288pt x 139.98074pt.
- [2<./imgs/binary-correlation.png><./imgs/binary-onefeaturebad.png><./imgs/binar
-y-onefeaturegood.png>]
-<imgs/binary-onefeature1.png, id=35, 389.455pt x 273.02pt>
+ [2<./imgs/binary-correlation.png>]
+<imgs/binary-onefeature1.png, id=32, 389.455pt x 273.02pt>
 File: imgs/binary-onefeature1.png Graphic file (type png)
 
 <use imgs/binary-onefeature1.png>
 Package luatex.def Info: imgs/binary-onefeature1.png used on input line 77.
 (luatex.def)             Requested size: 132.50273pt x 92.88806pt.
 
-<imgs/binary-onefeature2.png, id=36, 387.4475pt x 278.03876pt>
+<imgs/binary-onefeature2.png, id=33, 387.4475pt x 278.03876pt>
 File: imgs/binary-onefeature2.png Graphic file (type png)
 
 <use imgs/binary-onefeature2.png>
 Package luatex.def Info: imgs/binary-onefeature2.png used on input line 81.
 (luatex.def)             Requested size: 132.50273pt x 95.08769pt.
 
-<imgs/binary-onefeature3.png, id=37, 394.47375pt x 279.0425pt>
+<imgs/binary-onefeature3.png, id=34, 394.47375pt x 279.0425pt>
 File: imgs/binary-onefeature3.png Graphic file (type png)
 
 <use imgs/binary-onefeature3.png>
 Package luatex.def Info: imgs/binary-onefeature3.png used on input line 85.
 (luatex.def)             Requested size: 132.50273pt x 93.72783pt.
- [3<./imgs/binary-onefeature1.png><./imgs/binary-onefeature2.png><./imgs/binary-
-onefeature3.png>]
+ [3<./imgs/binary-onefeaturebad.png><./imgs/binary-onefeaturegood.png><./imgs/bi
+nary-onefeature1.png><./imgs/binary-onefeature2.png><./imgs/binary-onefeature3.p
+ng>]
 <imgs/binary-accuracy.png, id=44, 901.3675pt x 325.215pt>
 File: imgs/binary-accuracy.png Graphic file (type png)
 
 <use imgs/binary-accuracy.png>
 Package luatex.def Info: imgs/binary-accuracy.png used on input line 159.
 (luatex.def)             Requested size: 427.43153pt x 154.22067pt.
-
-<imgs/binary-numfeatures.png, id=45, 632.3625pt x 323.2075pt>
+ [4]
+<imgs/binary-numfeatures.png, id=48, 632.3625pt x 323.2075pt>
 File: imgs/binary-numfeatures.png Graphic file (type png)
 
 <use imgs/binary-numfeatures.png>
 Package luatex.def Info: imgs/binary-numfeatures.png used on input line 166.
 (luatex.def)             Requested size: 299.20076pt x 152.9284pt.
- [4<./imgs/binary-accuracy.png>]
-<imgs/binary-decisiontree.png, id=50, 337.26pt x 220.825pt>
+
+<imgs/binary-decisiontree.png, id=49, 337.26pt x 220.825pt>
 File: imgs/binary-decisiontree.png Graphic file (type png)
 
 <use imgs/binary-decisiontree.png>
 Package luatex.def Info: imgs/binary-decisiontree.png used on input line 176.
 (luatex.def)             Requested size: 170.97pt x 111.94534pt.
- [5<./imgs/binary-numfeatures.png><./imgs/binary-decisiontree.png>]
-<imgs/multiclass-visual.png, id=56, 913.4125pt x 320.19624pt>
+ [5<./imgs/binary-accuracy.png><./imgs/binary-numfeatures.png>] [6<./imgs/binary
+-decisiontree.png>]
+<imgs/multiclass-visual.png, id=59, 913.4125pt x 320.19624pt>
 File: imgs/multiclass-visual.png Graphic file (type png)
 
 <use imgs/multiclass-visual.png>
 Package luatex.def Info: imgs/multiclass-visual.png used on input line 198.
 (luatex.def)             Requested size: 427.43153pt x 149.83266pt.
- [6]
+
 <imgs/multiclass-correlation.png, id=60, 905.3825pt x 322.20375pt>
 File: imgs/multiclass-correlation.png Graphic file (type png)
 
@@ -919,8 +920,8 @@ File: imgs/multiclass-correlation.png Graphic file (type png)
 Package luatex.def Info: imgs/multiclass-correlation.png used on input line 207.
 
 (luatex.def)             Requested size: 427.43153pt x 152.10933pt.
-
-<imgs/multiclass-onefeature1.png, id=61, 391.4625pt x 284.06125pt>
+ [7<./imgs/multiclass-visual.png>]
+<imgs/multiclass-onefeature1.png, id=65, 391.4625pt x 284.06125pt>
 File: imgs/multiclass-onefeature1.png Graphic file (type png)
 
 <use imgs/multiclass-onefeature1.png>
@@ -928,7 +929,7 @@ Package luatex.def Info: imgs/multiclass-onefeature1.png used on input line 216.
 
 (luatex.def)             Requested size: 132.50273pt x 96.15042pt.
 
-<imgs/multiclass-onefeature2.png, id=62, 387.4475pt x 281.05pt>
+<imgs/multiclass-onefeature2.png, id=66, 387.4475pt x 281.05pt>
 File: imgs/multiclass-onefeature2.png Graphic file (type png)
 
 <use imgs/multiclass-onefeature2.png>
@@ -936,7 +937,7 @@ Package luatex.def Info: imgs/multiclass-onefeature2.png used on input line 220.
 
 (luatex.def)             Requested size: 132.50273pt x 96.11751pt.
 
-<imgs/multiclass-onefeature3.png, id=63, 387.4475pt x 281.05pt>
+<imgs/multiclass-onefeature3.png, id=67, 387.4475pt x 281.05pt>
 File: imgs/multiclass-onefeature3.png Graphic file (type png)
 
 <use imgs/multiclass-onefeature3.png>
@@ -944,7 +945,7 @@ Package luatex.def Info: imgs/multiclass-onefeature3.png used on input line 224.
 
 (luatex.def)             Requested size: 132.50273pt x 96.11751pt.
 
-<imgs/multiclass-onefeature4.png, id=64, 384.43625pt x 280.04625pt>
+<imgs/multiclass-onefeature4.png, id=68, 384.43625pt x 280.04625pt>
 File: imgs/multiclass-onefeature4.png Graphic file (type png)
 
 <use imgs/multiclass-onefeature4.png>
@@ -952,7 +953,7 @@ Package luatex.def Info: imgs/multiclass-onefeature4.png used on input line 230.
 
 (luatex.def)             Requested size: 132.50273pt x 96.52203pt.
 
-<imgs/multiclass-onefeature5.png, id=65, 395.4775pt x 282.05376pt>
+<imgs/multiclass-onefeature5.png, id=69, 395.4775pt x 282.05376pt>
 File: imgs/multiclass-onefeature5.png Graphic file (type png)
 
 <use imgs/multiclass-onefeature5.png>
@@ -960,15 +961,18 @@ Package luatex.def Info: imgs/multiclass-onefeature5.png used on input line 234.
 
 (luatex.def)             Requested size: 132.50273pt x 94.49826pt.
 
-<imgs/multiclass-onefeature6.png, id=66, 384.43625pt x 284.06125pt>
+<imgs/multiclass-onefeature6.png, id=70, 384.43625pt x 284.06125pt>
 File: imgs/multiclass-onefeature6.png Graphic file (type png)
 
 <use imgs/multiclass-onefeature6.png>
 Package luatex.def Info: imgs/multiclass-onefeature6.png used on input line 238.
 
 (luatex.def)             Requested size: 132.50273pt x 97.90587pt.
- [7<./imgs/multiclass-visual.png><./imgs/multiclass-correlation.png>]
-<imgs/multiclass-numfeatures1.png, id=72, 397.485pt x 273.02pt>
+ [8<./imgs/multiclass-correlation.png><./imgs/multiclass-onefeature1.png><./imgs
+/multiclass-onefeature2.png><./imgs/multiclass-onefeature3.png><./imgs/multiclas
+s-onefeature4.png><./imgs/multiclass-onefeature5.png><./imgs/multiclass-onefeatu
+re6.png>]
+<imgs/multiclass-numfeatures1.png, id=81, 397.485pt x 273.02pt>
 File: imgs/multiclass-numfeatures1.png Graphic file (type png)
 
 <use imgs/multiclass-numfeatures1.png>
@@ -976,17 +980,14 @@ Package luatex.def Info: imgs/multiclass-numfeatures1.png used on input line 251
 .
 (luatex.def)             Requested size: 205.1653pt x 140.92555pt.
 
-<imgs/multiclass-numfeatures2.png, id=73, 402.50375pt x 265.99374pt>
+<imgs/multiclass-numfeatures2.png, id=82, 402.50375pt x 265.99374pt>
 File: imgs/multiclass-numfeatures2.png Graphic file (type png)
 
 <use imgs/multiclass-numfeatures2.png>
 Package luatex.def Info: imgs/multiclass-numfeatures2.png used on input line 255
 .
 (luatex.def)             Requested size: 205.1653pt x 135.58195pt.
- [8<./imgs/multiclass-onefeature1.png><./imgs/multiclass-onefeature2.png><./imgs
-/multiclass-onefeature3.png><./imgs/multiclass-onefeature4.png><./imgs/multiclas
-s-onefeature5.png><./imgs/multiclass-onefeature6.png>] [9<./imgs/multiclass-numf
-eatures1.png><./imgs/multiclass-numfeatures2.png>]
+ [9<./imgs/multiclass-numfeatures1.png><./imgs/multiclass-numfeatures2.png>]
 <imgs/multiclass-decisiontree.png, id=89, 1171.37625pt x 498.86375pt>
 File: imgs/multiclass-decisiontree.png Graphic file (type png)
 
@@ -1001,7 +1002,7 @@ Here is how much of LuaTeX's memory you used:
  125171,953878 words of node,token memory allocated
  583 words of node memory still in use:
    5 hlist, 2 vlist, 2 rule, 31 glue, 1 kern, 43 glue_spec, 1 write nodes
-   avail lists: 1:3,2:27,3:94,4:38,5:194,6:3550,7:858,8:99,9:160,10:15,11:323
+   avail lists: 1:2,2:28,3:82,4:35,5:189,6:3006,7:856,8:126,9:155,10:15,11:272
  30186 multiletter control sequences out of 65536+600000
  46 fonts using 1913179 bytes
  57i,9n,77p,1285b,491s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -1017,9 +1018,9 @@ e/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk>><</cs/home/sy35/
 /.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmcsc10.720pk>><</cs/home/sy
 35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.1037pk>><</cs/home/
 sy35/.cache/texlive/texmf-var/fonts/pk/ljfour/public/cm/cmcsc10.1037pk>>
-Output written on Report.pdf (12 pages, 546259 bytes).
+Output written on Report.pdf (12 pages, 546617 bytes).
 
-PDF statistics: 404 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 403 PDF objects out of 1000 (max. 8388607)
  79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
